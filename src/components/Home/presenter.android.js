@@ -1,8 +1,8 @@
 import React, { PropTypes } from 'react';
 import {
+  Button,
   Text,
   View,
-  TouchableNativeFeedback,
 } from 'react-native';
 import styles from './style';
 
@@ -19,21 +19,18 @@ const Home = props => (
       Shake or press menu button for dev menu
     </Text>
 
-    <TouchableNativeFeedback onPress={props.navigate}>
-      <View>
-        {
-          props.extraText ?
-            <Text>
-              {props.extraText}
-              {'\nPress to pop'}
-            </Text>
-          :
-          <Text>
-            Push
-          </Text>
-        }
-      </View>
-    </TouchableNativeFeedback>
+    <Text>
+      { props.extraText }
+    </Text>
+
+    <Button
+      onPress={props.navigate}
+      title={props.extraText ?
+        'Pop'
+        :
+        'Push'
+      }
+    />
   </View>
 );
 
