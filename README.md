@@ -8,8 +8,8 @@ Start your react native project with eslint and flowtype configured.
 1. Rename the project [(reference)](http://blog.skypayjm.com/2016/07/renaming-react-native-project.html)
 
 #### Todo list
-1. Add redux/ducks into template
-1. Bring F8's createStylesheet into template
-1. Implement simple navigation using `NavigationExperimental`
+- [ ] Add redux/ducks into template
+- [x] Bring F8's createStylesheet into template
+- [ ] Implement simple navigation using `NavigationExperimental`
 
 I will try to keep the starter pack up to date whenever react native has new releases.
