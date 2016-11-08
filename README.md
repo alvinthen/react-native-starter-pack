@@ -1,18 +1,19 @@
 # react-native-starter-pack
 react-native-starter-pack = React Native + ESLint + Flow + Redux + NavigationExperimental
 
-## Usage
+# Usage
 1. Clone the project
   * If you like, delete the `.git` folder and run `git init` for a fresh copy without any history, or run git clone with `--depth 1`
 1. Run `yarn` or `npm i`.
 1. Rename the project [(reference)](http://blog.skypayjm.com/2016/07/renaming-react-native-project.html)
 
-#### Todo list
-- [x] Add redux/ducks into template
-- [x] Bring F8's createStylesheet into template
-- [x] Implement simple navigation using `NavigationExperimental`
+# Goal
+* To minimize effort to initialize a React Native Project.
+* To update the repo whenever React Native has new release.
+* To update the repo whenever some common features are required in most of my projects.
 
-#### Known issues
+# Known issues
 * jest not working with platform specific extensions
 
-I will try to keep the starter pack up to date whenever react native has new releases.
+# Disclaimers
+This starter pack is tailored for personal usage, no support/warranty is provided.
