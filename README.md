@@ -1,5 +1,5 @@
 # react-native-starter-pack
-Start your react native project with eslint and flowtype configured.
+react-native-starter-pack = React Native + ESLint + Flow + Redux + NavigationExperimental
 
 ## Usage
 1. Clone the project
