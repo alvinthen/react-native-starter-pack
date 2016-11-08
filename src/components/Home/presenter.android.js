@@ -6,23 +6,22 @@ import {
 } from 'react-native';
 import styles from './style';
 
-function Home(props) {
-  return (
-    <View style={styles.container}>
-      <Text style={styles.welcome}>
+const Home = props => (
+  <View style={styles.container}>
+    <Text style={styles.welcome}>
       Welcome to React Native!
     </Text>
-      <Text style={styles.instructions}>
-      To get started, edit index.android.js
+    <Text style={styles.instructions}>
+      To get started, edit index.ios.js
     </Text>
-      <Text style={styles.instructions}>
+    <Text style={styles.instructions}>
       Double tap R on your keyboard to reload,{'\n'}
       Shake or press menu button for dev menu
     </Text>
 
-      <TouchableNativeFeedback onPress={props.navigate}>
-        <View>
-          {
+    <TouchableNativeFeedback onPress={props.navigate}>
+      <View>
+        {
           props.extraText ?
             <Text>
               {props.extraText}
@@ -33,11 +32,10 @@ function Home(props) {
             Push
           </Text>
         }
-        </View>
-      </TouchableNativeFeedback>
-    </View>
-  );
-}
+      </View>
+    </TouchableNativeFeedback>
+  </View>
+);
 
 Home.propTypes = {
   extraText: PropTypes.string,
