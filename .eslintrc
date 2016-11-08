@@ -5,10 +5,12 @@
     "jest": true,
   },
   "plugins": [
-    "react"
+    "react",
+    "flowtype"
   ],
   "extends": [
-    "airbnb"
+    "airbnb",
+    "plugin:flowtype/recommended"
   ],
   "rules": {
     "react/jsx-filename-extension": 0
