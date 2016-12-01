@@ -13,7 +13,7 @@ react-native-starter-pack = React Native + ESLint + Flow + Redux + NavigationExp
 * To update the repo whenever some common features are required in most of my projects.
 
 # Known issues
-* jest not working with platform specific extensions
+* Tests failing due to this [issue](https://github.com/facebook/react-native/pull/11198)
 
 # Disclaimers
 This starter pack is tailored for personal usage, no support/warranty is provided.
