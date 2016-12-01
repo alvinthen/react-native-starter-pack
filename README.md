@@ -6,6 +6,16 @@ react-native-starter-pack = React Native + ESLint + Flow + Redux + NavigationExp
   * If you like, delete the `.git` folder and run `git init` for a fresh copy without any history, or run git clone with `--depth 1`
 1. Run `yarn` or `npm i`.
 1. Rename the project [(reference)](http://blog.skypayjm.com/2016/07/renaming-react-native-project.html)
+  1. Change name attribute in `package.json`
+  1. `$ react-native upgrade`
+  1. Overwrite the files when prompted
+  1. Go into the index.ios.js and index.android.js and change the names like so:
+    * From: AppRegistry.registerComponent('MyAppIOS', () => MyAppIOS);
+    * To: AppRegistry.registerComponent('MyApp', () => MyApp);
+  1. `$ rm -rf android/app/src/main/java/com/reactnativestarterpack`
+  1. Change package name in `AndroidManifest.xml`
+  1. Change app name in `strings.xml`
+  1. `$ rm -rf ios/ReactNativeStarterPack*`
 
 # Goal
 * To minimize effort to initialize a React Native Project.
