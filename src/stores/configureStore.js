@@ -4,7 +4,7 @@ import { persistStore, autoRehydrate } from 'redux-persist';
 import thunk from 'redux-thunk';
 import createLogger from 'redux-logger';
 
-import reducers from '../reducers';
+import reducers, { persistentStoreBlacklist } from '../reducers';
 
 const isDebuggingInChrome = __DEV__ && !!window.navigator.userAgent;
 
@@ -17,7 +17,7 @@ const logger = createLogger({
 export default function configureStore(onComplete: ?() => void) {
   const enhancer = compose(autoRehydrate(), applyMiddleware(thunk, logger));
   const store = createStore(reducers, enhancer);
-  persistStore(store, { storage: AsyncStorage }, onComplete);
+  persistStore(store, { storage: AsyncStorage, blacklist: persistentStoreBlacklist }, onComplete);
   if (isDebuggingInChrome) {
     window.store = store;
   }
