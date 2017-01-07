@@ -9,13 +9,13 @@
     "flow": "flow"
   },
   "dependencies": {
-    "react": "latest",
+    "react": "^15.4.2",
     "react-native": "0.40.0",
     "react-native-navigation-redux-helpers": "^0.5.0",
-    "react-redux": "^4.4.5",
+    "react-redux": "^5.0.1",
     "redux": "^3.6.0",
     "redux-logger": "^2.7.4",
-    "redux-persist": "^4.0.0-alpha7",
+    "redux-persist": "^4.0.1",
     "redux-thunk": "^2.1.0"
   },
   "jest": {
@@ -23,17 +23,17 @@
   },
   "devDependencies": {
     "babel-eslint": "^7.1.0",
-    "babel-jest": "latest",
-    "babel-preset-react-native": "1.9.0",
-    "eslint": "^3.9.1",
+    "babel-jest": "^18.0.0",
+    "babel-preset-react-native": "^1.9.1",
+    "eslint": "^3.13.0",
     "eslint-config-airbnb": "^13.0.0",
-    "eslint-plugin-flowtype": "^2.25.0",
+    "eslint-plugin-flowtype": "^2.29.2",
     "eslint-plugin-import": "^2.1.0",
     "eslint-plugin-jsx-a11y": "^2.2.3",
-    "eslint-plugin-react": "^6.6.0",
+    "eslint-plugin-react": "^6.8.0",
     "flow-bin": "^0.36.0",
-    "jest": "latest",
-    "jest-react-native": "latest",
-    "react-test-renderer": "latest"
+    "jest": "^18.1.0",
+    "jest-react-native": "^18.0.0",
+    "react-test-renderer": "^15.4.2"
   }
 }
