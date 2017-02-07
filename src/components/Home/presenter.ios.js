@@ -36,7 +36,11 @@ const Home = props => (
 
 Home.propTypes = {
   extraText: PropTypes.string,
-  navigate: PropTypes.func,
+  navigate: PropTypes.func.isRequired,
+};
+
+Home.defaultProps = {
+  extraText: '',
 };
 
 export default Home;

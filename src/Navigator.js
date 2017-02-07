@@ -15,7 +15,7 @@ const {
 class Navigator extends React.Component {
   static propTypes = {
     navigationState: NavigationPropTypes.navigationState.isRequired,
-    dispatch: PropTypes.func,
+    dispatch: PropTypes.func.isRequired,
   };
 
   componentDidMount() {
