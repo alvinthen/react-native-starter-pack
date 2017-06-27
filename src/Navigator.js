@@ -1,67 +1,30 @@
-import React, { PropTypes } from 'react';
-import {
-  BackAndroid,
-  NavigationExperimental,
-} from 'react-native';
+// @flow
+import React from 'react';
 import { connect } from 'react-redux';
-import { actions as navActions } from './ducks/navigation';
-import Home from './components/Home';
+import { addNavigationHelpers, StackNavigator, type NavigationState } from 'react-navigation';
+import People from './containers/People';
+import Person from './components/Person';
 
-const {
-  PropTypes: NavigationPropTypes,
-  CardStack: NavigationCardStack,
-} = NavigationExperimental;
+export const Navigator = StackNavigator({
+  People: {
+    screen: People,
+    navigationOptions: {
+      title: 'SW Characters',
+    },
+  },
+  Person: { screen: Person },
+});
 
-class Navigator extends React.Component {
-  static propTypes = {
-    navigationState: NavigationPropTypes.navigationState.isRequired,
-    dispatch: PropTypes.func.isRequired,
-  };
+type Props = { dispatch: Function, nav: NavigationState };
 
-  componentDidMount() {
-    BackAndroid.addEventListener('hardwareBackPress', () => this.handleBackButton());
-  }
+const NavigatorWithState = (props: Props) => (
+  <Navigator navigation={addNavigationHelpers({
+    dispatch: props.dispatch,
+    state: props.nav,
+  })}
+  />
+);
 
-  componentWillUnmount() {
-    BackAndroid.removeEventListener('hardwareBackPress', () => this.handleBackButton());
-  }
+const mapStateToProps = state => ({ nav: state.nav });
 
-  handleBackButton() {
-    if (this.props.navigationState.index > 0) {
-      this.props.dispatch(navActions.popRoute('GlobalNavigation'));
-      return true;
-    }
-
-    return false;
-  }
-
-  renderScene(props) {
-    const { extraText, key } = props.scene.route;
-
-    if (key === 'index') {
-      return <Home />;
-    }
-
-    return <Home extraText={extraText} />;
-  }
-
-  render() {
-    return (
-      <NavigationCardStack
-        renderScene={props => this.renderScene(props)}
-        navigationState={this.props.navigationState}
-        onNavigateBack={() => {
-          this.props.dispatch(navActions.popRoute('GlobalNavigation'));
-        }}
-      />
-    );
-  }
-}
-
-function select(store) {
-  return {
-    navigationState: store.navigation,
-  };
-}
-
-export default connect(select)(Navigator);
+export default connect(mapStateToProps)(NavigatorWithState);

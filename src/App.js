@@ -1,31 +1,32 @@
+// @flow
 import React from 'react';
+import { ActivityIndicator } from 'react-native';
 import { Provider } from 'react-redux';
 
-import Main from './Main';
-import configureStore from './stores/configureStore';
+import { type Store } from 'redux';
+
+import Navigator from './Navigator';
+import createStore from './redux/createStore';
 
 class App extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      isLoading: true,
-      store: configureStore(() => this.setState({ isLoading: false })),
-    };
+  state = { rehydrated: false };
+
+  componentDidMount() {
+    this.store = createStore(() => this.setState({ rehydrated: true }));
   }
 
+  store: Store;
+
   render() {
-    if (this.state.isLoading) {
-      return null;
+    if (!this.state.rehydrated) {
+      return <ActivityIndicator />;
     }
     return (
-      <Provider store={this.state.store}>
-        <Main />
+      <Provider store={this.store}>
+        <Navigator />
       </Provider>
     );
   }
 }
 
 export default App;
-
-/* eslint-disable */
-console.disableYellowBox = true; // Temporarily disable warnings from NavigationExperimental
