@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 
 import { type Store } from 'redux';
 
-import Navigator from './Navigator';
+import NavigatorWithState from './Navigator';
 import createStore from './redux/createStore';
 
 class App extends React.Component {
@@ -23,7 +23,7 @@ class App extends React.Component {
     }
     return (
       <Provider store={this.store}>
-        <Navigator />
+        <NavigatorWithState />
       </Provider>
     );
   }
