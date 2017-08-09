@@ -16,7 +16,6 @@
 
 ; Ignore issues with react-navigation
 .*/node_modules/react-navigation/.*
-.*/node_modules/react-native-tab-view/.*
 
 [include]
 
