@@ -16,7 +16,7 @@ const logger = createLogger({
   duration: true,
 });
 
-export default function configureStore(onComplete: () => any) {
+export default function configureStore(onComplete?: () => any) {
   const enhancer = compose(autoRehydrate(), applyMiddleware(thunk, reduxPackMiddleware, logger));
   const store = createStore(reducers, enhancer);
   persistStore(store, { storage: AsyncStorage, blacklist: persistentBlacklist }, onComplete);
