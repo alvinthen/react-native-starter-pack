@@ -21,7 +21,9 @@ type State = typeof initialState;
 type Action = { type: typeof FETCH_PEOPLE, payload: any };
 
 const applyFetchPeople = (state, action) => handle(state, action, {
-  start: prevState => ({ ...prevState, isLoading: true, error: null, people: [] }),
+  start: prevState => ({
+    ...prevState, isLoading: true, error: null, people: [],
+  }),
   finish: prevState => ({ ...prevState, isLoading: false }),
   failure: prevState => ({ ...prevState, error: action.payload }),
   success: prevState => ({ ...prevState, people: action.payload.results }),

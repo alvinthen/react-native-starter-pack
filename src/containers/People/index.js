@@ -7,15 +7,15 @@ import { actionCreators as peopleActionCreators } from '../../redux/modules/peop
 
 import People from './presenter';
 
-class PeopleContainer extends React.Component {
+type Props = {
+  doFetchPeople: Function,
+  goToPerson: Function,
+  people: Array<{ name: string, url: string }>,
+}
+
+class PeopleContainer extends React.Component<Props> {
   componentDidMount() {
     this.props.doFetchPeople();
-  }
-
-  props: {
-    doFetchPeople: Function,
-    goToPerson: Function,
-    people: Array<{name: string}>,
   }
 
   render() {

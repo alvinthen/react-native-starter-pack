@@ -4,13 +4,11 @@ import { ActivityIndicator, FlatList, Text, TouchableOpacity, View } from 'react
 import styles from './styles';
 
 type Props = {
-  people: Array<{ name: string }>,
+  people: Array<{ name: string, url: string }>,
   goToPerson: Function,
 };
 
-export default class People extends React.Component {
-  props: Props;
-
+export default class People extends React.Component<Props> {
   renderRow({ item }: any) {
     return (
       <TouchableOpacity onPress={() => this.props.goToPerson(item)}>
