@@ -49,7 +49,6 @@ suppress_comment=\\(.\\|\n\\)*\\$FlowExpectedError
 unsafe.enable_getters_and_setters=true
 
 module.name_mapper='^react-navigation$' -> 'emptyObject'
-module.name_mapper='^react-native-tab-view$' -> 'emptyObject'
 
 [version]
 ^0.53.0
