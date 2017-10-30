@@ -1,4 +1,4 @@
-# react-native-starter-pack
+# react-native-starter-pack [![CircleCI](https://circleci.com/gh/alvinthen/react-native-starter-pack.svg?style=svg)](https://circleci.com/gh/alvinthen/react-native-starter-pack)
 
 Yet another react native start pack, configured with
 * redux
