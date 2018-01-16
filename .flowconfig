@@ -16,13 +16,6 @@
 ; Ignore polyfills
 .*/Libraries/polyfills/.*
 
-; Ignore issues with react-navigation
-.*/node_modules/react-navigation/.*
-.*/node_modules/react-native-tab-view/.*
-
-; Ignore issues with redux-persist
-.*/node_modules/redux-persist/.*
-
 ; Ignore metro
 .*/node_modules/metro/.*
 
