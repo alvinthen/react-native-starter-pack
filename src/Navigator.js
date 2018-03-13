@@ -2,6 +2,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { addNavigationHelpers, StackNavigator, type NavigationState } from 'react-navigation';
+import { addListener } from './redux/react-navigation';
 import People from './containers/People';
 import Person from './components/Person';
 
@@ -21,6 +22,7 @@ const NavigatorWithState = (props: Props) => (
   <Navigator navigation={addNavigationHelpers({
     dispatch: props.dispatch,
     state: props.nav,
+    addListener,
   })}
   />
 );

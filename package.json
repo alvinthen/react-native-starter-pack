@@ -11,9 +11,10 @@
     "android": "react-native run-android"
   },
   "dependencies": {
-    "react": "16.2.0",
-    "react-native": "0.52.0",
+    "react": "^16.3.0-alpha.1",
+    "react-native": "0.54.2",
     "react-navigation": "^1.0.0-beta.15",
+    "react-navigation-redux-helpers": "^1.0.3",
     "react-redux": "^5.0.5",
     "redux": "^3.7.0",
     "redux-logger": "^3.0.6",
@@ -32,7 +33,7 @@
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-react": "^7.0.1",
-    "flow-bin": "^0.61.0",
+    "flow-bin": "^0.65.0",
     "jest": "^22.1.1",
     "react-test-renderer": "^16.2.0"
   },
