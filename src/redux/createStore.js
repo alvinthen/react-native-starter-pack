@@ -1,7 +1,7 @@
 // @flow
+import { AsyncStorage } from 'react-native';
 import { applyMiddleware, createStore, compose } from 'redux';
 import { persistStore, persistCombineReducers } from 'redux-persist';
-import storage from 'redux-persist/es/storage';
 import thunk from 'redux-thunk';
 import { middleware as reduxPackMiddleware } from 'redux-pack';
 import { createLogger } from 'redux-logger';
@@ -19,7 +19,7 @@ const logger = createLogger({
 
 const config = {
   key: 'root',
-  storage,
+  storage: AsyncStorage,
   blacklist,
 };
 
