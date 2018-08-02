@@ -22,10 +22,11 @@
     "redux-thunk": "^2.2.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.0.0-beta",
+    "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^8.0.2",
     "babel-jest": "23.4.2",
-    "babel-preset-airbnb": "^2.3.3",
-    "babel-preset-react-native": "5.0.0",
+    "babel-preset-react-native": "^5.0.2",
     "eslint": "^5.0.1",
     "eslint-config-airbnb": "17",
     "eslint-plugin-flowtype": "^2.34.0",
@@ -41,6 +42,9 @@
     "transformIgnorePatterns": [
       "node_modules/(?!(jest-)?react-native|react-navigation|redux-persist)"
     ],
+    "transform": {
+      "^.+\\.js$": "<rootDir>/node_modules/react-native/jest/preprocessor.js"
+    },
     "globals": {
       "window": {
         "navigator": {}
