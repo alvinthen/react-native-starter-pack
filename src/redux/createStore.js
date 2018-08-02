@@ -7,7 +7,6 @@ import { middleware as reduxPackMiddleware } from 'redux-pack';
 import { createLogger } from 'redux-logger';
 
 import reducers, { blacklist } from './modules';
-import { middleware as reactNavigationReduxMiddleware } from './react-navigation';
 
 const isDebuggingInChrome = __DEV__ && !!window.navigator.userAgent;
 
@@ -25,7 +24,6 @@ const config = {
 
 export default function configureStore() {
   const enhancer = compose(applyMiddleware(
-    reactNavigationReduxMiddleware,
     thunk,
     reduxPackMiddleware,
     logger,

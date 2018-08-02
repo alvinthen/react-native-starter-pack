@@ -4,7 +4,7 @@ import { ActivityIndicator } from 'react-native';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 
-import NavigatorWithState from './Navigator';
+import Navigator from './Navigator';
 import createStore from './redux/createStore';
 
 const { persistor, store } = createStore();
@@ -15,7 +15,7 @@ const App = () => (
       loading={<ActivityIndicator />}
       persistor={persistor}
     >
-      <NavigatorWithState />
+      <Navigator />
     </PersistGate>
   </Provider>
 );
