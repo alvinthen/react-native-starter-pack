@@ -1,21 +1,29 @@
 // @flow
 import React from 'react';
 import { Text, View } from 'react-native';
-import type { NavigationProps } from 'react-navigation';
+import type { NavigationScreenProp, NavigationState } from 'react-navigation';
 
-type Props = { navigation: NavigationProps };
+type Props = { navigation: NavigationScreenProp<NavigationState> };
 
 const Person = ({ navigation }: Props) => (
   <View>
-    <Text>{navigation.state.params.name}</Text>
-    <Text>{navigation.state.params.gender}</Text>
-    <Text>{navigation.state.params.height}</Text>
-    <Text>{navigation.state.params.mass}</Text>
+    <Text>
+      {navigation.getParam('name')}
+    </Text>
+    <Text>
+      {navigation.getParam('gender')}
+    </Text>
+    <Text>
+      {navigation.getParam('height')}
+    </Text>
+    <Text>
+      {navigation.getParam('mass')}
+    </Text>
   </View>
 );
 
 Person.navigationOptions = ({ navigation }) => ({
-  title: navigation.state.params.name,
+  title: navigation.getParam('name', 'Person name'),
 });
 
 export default Person;
