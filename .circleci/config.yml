@@ -6,7 +6,19 @@ jobs:
       - image: circleci/node:8
     steps:
       - checkout
+      - restore_cache:
+          key: yarn-v1-{{ checksum "yarn.lock" }}-{{ arch }}
+      - restore_cache:
+          key: node-v1-{{ checksum "package.json" }}-{{ arch }}
       - run: yarn
+      - save_cache:
+          key: yarn-v1-{{ checksum "yarn.lock" }}-{{ arch }}
+          paths:
+            - ~/.cache/yarn
+      - save_cache:
+          key: node-v1-{{ checksum "package.json" }}-{{ arch }}
+          paths:
+            - node_modules
       - run: yarn lint
       - run: yarn flow check
       - run: yarn test
@@ -26,6 +38,20 @@ jobs:
           path: ~/project
       - attach_workspace:
           at: ~/project
-      - run: cd android && ./gradlew assembleDebug
+      - run: mkdir -p app/build/intermediates/assets/debug app/build/intermediates/res/merged/debug
+      - run: export TERM=xterm && ./gradlew assembleDebug
+      - run: yarn build-android
+      - run: export TERM=xterm && ./gradlew assembleDebug
       - store_test_results:
           path: ~/project/android/reports
+      - store_artifacts:
+          path: app/build/outputs
+          destination: outputs
+workflows:
+  version: 2
+  build-android:
+    jobs:
+      - build
+      - android:
+          requires:
+            - build
