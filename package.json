@@ -8,7 +8,8 @@
     "lint": "eslint src/",
     "flow": "flow",
     "ios": "react-native run-ios",
-    "android": "react-native run-android"
+    "android": "react-native run-android",
+    "build-android": "react-native bundle --dev false --platform android --entry-file index.js --bundle-output ./android/app/build/intermediates/assets/debug/index.android.bundle --assets-dest ./android/app/build/intermediates/res/merged/debug"
   },
   "dependencies": {
     "react": "16.4.2",
