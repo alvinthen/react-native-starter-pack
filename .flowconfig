@@ -19,13 +19,6 @@
 ; Ignore metro
 .*/node_modules/metro/.*
 
-[untyped]
-.*/node_modules/react-native/Libraries/Components/Navigation/NavigatorIOS.ios.js
-.*/node_modules/react-native/Libraries/Components/TextInput/InputAccessoryView.js
-.*/node_modules/react-native/Libraries/Components/View/ViewPropTypes.js
-.*/node_modules/react-native/Libraries/Components/SafeAreaView/SafeAreaView.ios.js
-.*/node_modules/redux-persist/lib/integration/react.js.flow
-
 [include]
 
 [libs]
@@ -35,9 +28,6 @@ node_modules/react-native/flow-github/
 
 [options]
 emoji=true
-
-esproposal.optional_chaining=enable
-esproposal.nullish_coalescing=enable
 
 module.system=haste
 module.system.haste.use_name_reducers=true
@@ -74,4 +64,4 @@ suppress_comment=\\(.\\|\n\\)*\\$FlowFixedInNextDeploy
 suppress_comment=\\(.\\|\n\\)*\\$FlowExpectedError
 
 [version]
-^0.83.0
+^0.75.0
