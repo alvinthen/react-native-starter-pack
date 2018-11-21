@@ -1,9 +1,9 @@
 // @flow
-import { createStackNavigator } from 'react-navigation';
+import { createAppContainer, createStackNavigator } from 'react-navigation';
 import People from './containers/People';
 import Person from './components/Person';
 
-export default createStackNavigator({
+const MainNavigator = createStackNavigator({
   People: {
     screen: People,
     navigationOptions: {
@@ -14,3 +14,5 @@ export default createStackNavigator({
 }, {
   initialRouteName: 'People',
 });
+
+export default createAppContainer(MainNavigator);
