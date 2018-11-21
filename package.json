@@ -42,7 +42,7 @@
   "jest": {
     "preset": "react-native",
     "transformIgnorePatterns": [
-      "node_modules/(?!(jest-)?react-native|react-navigation|redux-persist)"
+      "node_modules/(?!(jest-)?react-native|react-navigation|@react-navigation)"
     ],
     "transform": {
       "^.+\\.js$": "<rootDir>/node_modules/react-native/jest/preprocessor.js"
@@ -51,6 +51,9 @@
       "window": {
         "navigator": {}
       }
-    }
+    },
+    "setupFiles": [
+      "<rootDir>/jestSetup.js"
+    ]
   }
 }
